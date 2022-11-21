@@ -20,9 +20,12 @@ ___
 + ***[Java 11](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)***
 ___
 ### :question: ***How to run this project: :question:***
-- [x] ***Fork this project to your repository***
-- [x] ***Press "Code" and choose HTTPS or SSH url to clone the project***
-- [x] ***Create new project from Version Control and write this url***
+- [x] ***Clone the project***
 - [x] ***Write your properties to application.properties file***
 - [x] ***Run the project***    
-
+___
+###  ***Example GET requests***
+```java
+        http://localhost:8090/movie-characters/random
+        http://localhost:8090/movie-characters/by-name?name=Rick
+```

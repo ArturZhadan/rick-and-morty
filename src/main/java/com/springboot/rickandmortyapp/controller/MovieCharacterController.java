@@ -1,27 +1,23 @@
 package com.springboot.rickandmortyapp.controller;
 
 import com.springboot.rickandmortyapp.dto.CharacterResponseDto;
-import com.springboot.rickandmortyapp.dto.mapper.MovieCharacterMapper;
+import com.springboot.rickandmortyapp.mapper.MovieCharacterMapper;
 import com.springboot.rickandmortyapp.model.MovieCharacter;
 import com.springboot.rickandmortyapp.service.MovieCharacterService;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/movie-characters")
 public class MovieCharacterController {
     private final MovieCharacterService movieCharacterService;
     private final MovieCharacterMapper movieCharacterMapper;
-
-    public MovieCharacterController(MovieCharacterService movieCharacterService,
-                                    MovieCharacterMapper movieCharacterMapper) {
-        this.movieCharacterService = movieCharacterService;
-        this.movieCharacterMapper = movieCharacterMapper;
-    }
 
     @GetMapping("/random")
     public CharacterResponseDto getRandom() {
